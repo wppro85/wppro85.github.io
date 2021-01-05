@@ -263,7 +263,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-05 19:42:27 / Modified: 22:22:33" itemprop="dateCreated datePublished" datetime="2021-01-05T19:42:27+08:00">2021-01-05</time>
+              <time title="Created: 2021-01-05 19:42:27 / Modified: 22:28:10" itemprop="dateCreated datePublished" datetime="2021-01-05T19:42:27+08:00">2021-01-05</time>
             </span>
 
           
@@ -278,18 +278,19 @@
 
       
           <h2 id="安装i3版本manjaro的安装记录"><a href="#安装i3版本manjaro的安装记录" class="headerlink" title="安装i3版本manjaro的安装记录"></a>安装i3版本manjaro的安装记录</h2><ol>
-<li><p>解决外接机械键盘功能键区无法使用的问题<br>参考文件:How to swap the “fn” use of Function keys on an Apple Keyboard in Linux<br><a target="_blank" rel="noopener" href="https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux">https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux</a></p>
-<p> echo 0 &gt; /sys/module/hid_apple/parameters/fnmode<br>Or, in case of permission issue:<br> echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode</p>
-</li>
+<li>解决外接机械键盘功能键区无法使用的问题<br>参考文件:<br>How to swap the “fn” use of Function keys on an Apple Keyboard in Linux<br><a target="_blank" rel="noopener" href="https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux">https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 0 &gt; &#x2F;sys&#x2F;module&#x2F;hid_apple&#x2F;parameters&#x2F;fnmode</span><br></pre></td></tr></table></figure>
+Or, in case of permission issue:<br> echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode</li>
 </ol>
 <p>This will prevent you from having to reboot. Adding the option is a good idea, so the change persists through reboots.<br>0 = Fn key disabled<br>1 = Fn key pressed by default<br>2 = Fn key released by default<br>From <code>/drivers/hid/hid-apple.c</code> line 42:<br>   Mode of fn key on Apple keyboards (0 = disabled, [1] = fkeyslast, 2 = fkeysfirst) </p>
 <p>his worked for me on <strong>Fedora 24</strong>Create a new file for SystemD to start.</p>
 <pre><code>gedit /usr/lib/systemd/system/mac-keyboard.service</code></pre>
-<p>Ensure the file contains the following<br>    <code>[Unit]      Description=mac-keyboard     [Service]      Type=oneshot      ExecStart=/bin/sh -c &quot;echo 2 &gt; /sys/module/hid_apple/parameters/fnmode&quot;      ExecStop=/bin/sh -c &quot;echo 1 &gt; /sys/module/hid_apple/parameters/fnmode&quot;      RemainAfterExit=yes     [Install]      WantedBy=multi-user.target</code></p>
-<p>Reload SystemD to read your new file</p>
+<p>Ensure the file contains the following</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line"> Description&#x3D;mac-keyboard</span><br><span class="line">[Service]</span><br><span class="line"> Type&#x3D;oneshot</span><br><span class="line"> ExecStart&#x3D;&#x2F;bin&#x2F;sh -c &quot;echo 2 &gt; &#x2F;sys&#x2F;module&#x2F;hid_apple&#x2F;parameters&#x2F;fnmode&quot;</span><br><span class="line"> ExecStop&#x3D;&#x2F;bin&#x2F;sh -c &quot;echo 1 &gt; &#x2F;sys&#x2F;module&#x2F;hid_apple&#x2F;parameters&#x2F;fnmode&quot;</span><br><span class="line"> RemainAfterExit&#x3D;yes</span><br><span class="line">[Install]</span><br><span class="line"> WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>Reload SystemD to read your new file  </p>
 <ol>
-<li> <code>systemctl --system daemon-reload</code><br>Start the SystemD service.</li>
-<li> <code>systemctl start mac-keyboard.service</code><br>Enable service to start on boot.</li>
+<li> <code>systemctl --system daemon-reload</code><br>Start the SystemD service.  </li>
+<li> <code>systemctl start mac-keyboard.service</code><br>Enable service to start on boot.  </li>
 <li> <code>systemctl enable mac-keyboard.service</code><br>Reference: <a target="_blank" rel="noopener" href="https://www.dalemacartney.com/2013/06/14/changing-the-default-function-key-behaviour-in-fedora/">https://www.dalemacartney.com/2013/06/14/changing-the-default-function-key-behaviour-in-fedora/</a></li>
 </ol>
 
