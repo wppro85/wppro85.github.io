@@ -173,6 +173,144 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/05/%E5%85%B3%E4%BA%8Emarkdown-preview-nvim%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/05/%E5%85%B3%E4%BA%8Emarkdown-preview-nvim%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">关于markdown-preview.nvim安装失败的解决方法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-05 22:04:51 / Modified: 22:22:51" itemprop="dateCreated datePublished" datetime="2021-01-05T22:04:51+08:00">2021-01-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h5 id="mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功"><a href="#mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功" class="headerlink" title="mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功"></a>mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功</h5><p><code>Plug &#39;iamcco/markdown-preview.nvim&#39;, &#123; &#39;do&#39;: &#39;cd app &amp;&amp; yarn install&#39;  &#125;</code>  </p>
+<h5 id="经过排查mac一开始没有安装yarn-尝试了"><a href="#经过排查mac一开始没有安装yarn-尝试了" class="headerlink" title="经过排查mac一开始没有安装yarn,尝试了"></a>经过排查mac一开始没有安装yarn,尝试了</h5><p><code>brew install yarn</code>  </p>
+<h5 id="安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法"><a href="#安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法" class="headerlink" title="安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:"></a>安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:</h5><ol>
+<li>克隆完成后,进入plugin目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br></pre></td></tr></table></figure></li>
+<li>使用终端代理proxychains4 启动nvim 挂代理安装插件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">proxychains4 nvim   </span><br><span class="line">PlugInstall</span><br></pre></td></tr></table></figure>
+安装后成功,再次启动nvim打开markdown文件:MarkdownPreview可以正常启动浏览器进行预览了</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/05/i3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/05/i3/" class="post-title-link" itemprop="url">i3</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-05 19:42:27 / Modified: 22:22:33" itemprop="dateCreated datePublished" datetime="2021-01-05T19:42:27+08:00">2021-01-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="安装i3版本manjaro的安装记录"><a href="#安装i3版本manjaro的安装记录" class="headerlink" title="安装i3版本manjaro的安装记录"></a>安装i3版本manjaro的安装记录</h2><ol>
+<li><p>解决外接机械键盘功能键区无法使用的问题<br>参考文件:How to swap the “fn” use of Function keys on an Apple Keyboard in Linux<br><a target="_blank" rel="noopener" href="https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux">https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux</a></p>
+<p> echo 0 &gt; /sys/module/hid_apple/parameters/fnmode<br>Or, in case of permission issue:<br> echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode</p>
+</li>
+</ol>
+<p>This will prevent you from having to reboot. Adding the option is a good idea, so the change persists through reboots.<br>0 = Fn key disabled<br>1 = Fn key pressed by default<br>2 = Fn key released by default<br>From <code>/drivers/hid/hid-apple.c</code> line 42:<br>   Mode of fn key on Apple keyboards (0 = disabled, [1] = fkeyslast, 2 = fkeysfirst) </p>
+<p>his worked for me on <strong>Fedora 24</strong>Create a new file for SystemD to start.</p>
+<pre><code>gedit /usr/lib/systemd/system/mac-keyboard.service</code></pre>
+<p>Ensure the file contains the following<br>    <code>[Unit]      Description=mac-keyboard     [Service]      Type=oneshot      ExecStart=/bin/sh -c &quot;echo 2 &gt; /sys/module/hid_apple/parameters/fnmode&quot;      ExecStop=/bin/sh -c &quot;echo 1 &gt; /sys/module/hid_apple/parameters/fnmode&quot;      RemainAfterExit=yes     [Install]      WantedBy=multi-user.target</code></p>
+<p>Reload SystemD to read your new file</p>
+<ol>
+<li> <code>systemctl --system daemon-reload</code><br>Start the SystemD service.</li>
+<li> <code>systemctl start mac-keyboard.service</code><br>Enable service to start on boot.</li>
+<li> <code>systemctl enable mac-keyboard.service</code><br>Reference: <a target="_blank" rel="noopener" href="https://www.dalemacartney.com/2013/06/14/changing-the-default-function-key-behaviour-in-fedora/">https://www.dalemacartney.com/2013/06/14/changing-the-default-function-key-behaviour-in-fedora/</a></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -300,12 +438,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

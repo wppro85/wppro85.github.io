@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>i3</title>
+    <url>/2021/01/05/i3/</url>
+    <content><![CDATA[<h2 id="安装i3版本manjaro的安装记录"><a href="#安装i3版本manjaro的安装记录" class="headerlink" title="安装i3版本manjaro的安装记录"></a>安装i3版本manjaro的安装记录</h2><ol>
+<li><p>解决外接机械键盘功能键区无法使用的问题<br>参考文件:How to swap the “fn” use of Function keys on an Apple Keyboard in Linux<br><a href="https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux">https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux</a></p>
+<p> echo 0 &gt; /sys/module/hid_apple/parameters/fnmode<br>Or, in case of permission issue:<br> echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode</p>
+</li>
+</ol>
+<p>This will prevent you from having to reboot. Adding the option is a good idea, so the change persists through reboots.<br>0 = Fn key disabled<br>1 = Fn key pressed by default<br>2 = Fn key released by default<br>From <code>/drivers/hid/hid-apple.c</code> line 42:<br>   Mode of fn key on Apple keyboards (0 = disabled, [1] = fkeyslast, 2 = fkeysfirst) </p>
+<p>his worked for me on <strong>Fedora 24</strong>Create a new file for SystemD to start.</p>
+<pre><code>gedit /usr/lib/systemd/system/mac-keyboard.service</code></pre>
+<p>Ensure the file contains the following<br>    <code>[Unit]      Description=mac-keyboard     [Service]      Type=oneshot      ExecStart=/bin/sh -c &quot;echo 2 &gt; /sys/module/hid_apple/parameters/fnmode&quot;      ExecStop=/bin/sh -c &quot;echo 1 &gt; /sys/module/hid_apple/parameters/fnmode&quot;      RemainAfterExit=yes     [Install]      WantedBy=multi-user.target</code></p>
+<p>Reload SystemD to read your new file</p>
+<ol>
+<li> <code>systemctl --system daemon-reload</code><br>Start the SystemD service.</li>
+<li> <code>systemctl start mac-keyboard.service</code><br>Enable service to start on boot.</li>
+<li> <code>systemctl enable mac-keyboard.service</code><br>Reference: <a href="https://www.dalemacartney.com/2013/06/14/changing-the-default-function-key-behaviour-in-fedora/">https://www.dalemacartney.com/2013/06/14/changing-the-default-function-key-behaviour-in-fedora/</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>i3,manjaro</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客搭建记录</title>
     <url>/2021/01/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h3 id="uPic图床设置-token添加"><a href="#uPic图床设置-token添加" class="headerlink" title="uPic图床设置 token添加"></a>uPic图床设置 token添加</h3><h3 id="关于阿里云域名解析的设置"><a href="#关于阿里云域名解析的设置" class="headerlink" title="关于阿里云域名解析的设置"></a>关于阿里云域名解析的设置</h3><p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/uPic/rCct52.png" alt="rCct52"></p>
@@ -13,6 +36,21 @@
 ]]></content>
       <tags>
         <tag>hexo,github,upic,阿里云域名</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于markdown-preview.nvim安装失败的解决方法</title>
+    <url>/2021/01/05/%E5%85%B3%E4%BA%8Emarkdown-preview-nvim%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h5 id="mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功"><a href="#mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功" class="headerlink" title="mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功"></a>mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功</h5><p><code>Plug &#39;iamcco/markdown-preview.nvim&#39;, &#123; &#39;do&#39;: &#39;cd app &amp;&amp; yarn install&#39;  &#125;</code>  </p>
+<h5 id="经过排查mac一开始没有安装yarn-尝试了"><a href="#经过排查mac一开始没有安装yarn-尝试了" class="headerlink" title="经过排查mac一开始没有安装yarn,尝试了"></a>经过排查mac一开始没有安装yarn,尝试了</h5><p><code>brew install yarn</code>  </p>
+<h5 id="安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法"><a href="#安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法" class="headerlink" title="安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:"></a>安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:</h5><ol>
+<li>克隆完成后,进入plugin目录<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yarn install</span><br></pre></td></tr></table></figure></li>
+<li>使用终端代理proxychains4 启动nvim 挂代理安装插件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">proxychains4 nvim   </span><br><span class="line">PlugInstall</span><br></pre></td></tr></table></figure>
+安装后成功,再次启动nvim打开markdown文件:MarkdownPreview可以正常启动浏览器进行预览了</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>vim,neovim,markdown</tag>
       </tags>
   </entry>
 </search>
