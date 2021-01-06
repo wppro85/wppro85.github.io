@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Mac系统常用软件配置记录</title>
-    <url>/2021/01/06/Mac%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h4 id="nvALT-随叫随到随处用的Mac速记工具"><a href="#nvALT-随叫随到随处用的Mac速记工具" class="headerlink" title="nvALT - 随叫随到随处用的Mac速记工具"></a>nvALT - 随叫随到随处用的Mac速记工具</h4><h4 id="unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具"><a href="#unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具" class="headerlink" title="unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具"></a>unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具</h4><h4 id="安装v2ray命令行代理工具和qv2ray图形界面工具"><a href="#安装v2ray命令行代理工具和qv2ray图形界面工具" class="headerlink" title="安装v2ray命令行代理工具和qv2ray图形界面工具"></a>安装v2ray命令行代理工具和qv2ray图形界面工具</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install v2ray  </span><br><span class="line">brew install qv2ray  </span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/images/20210106-v2U9yi.png" alt="20210106-v2U9yi"></p>
-<h4 id="几个重要的配置文件"><a href="#几个重要的配置文件" class="headerlink" title="几个重要的配置文件"></a>几个重要的配置文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.zshrc</span><br><span class="line">.tmux.conf</span><br><span class="line">.vimrc init.vim</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Mac,Soft,profile,config</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客搭建记录</title>
     <url>/2021/01/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h3 id="uPic图床设置-token添加"><a href="#uPic图床设置-token添加" class="headerlink" title="uPic图床设置 token添加"></a>uPic图床设置 token添加</h3><h3 id="关于阿里云域名解析的设置"><a href="#关于阿里云域名解析的设置" class="headerlink" title="关于阿里云域名解析的设置"></a>关于阿里云域名解析的设置</h3><p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/uPic/rCct52.png" alt="rCct52"></p>
+    <content><![CDATA[<h3 id="安装hexo完成初始化配置"><a href="#安装hexo完成初始化配置" class="headerlink" title="安装hexo完成初始化配置"></a>安装hexo完成初始化配置</h3><hr>
+<h5 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h5><p><code>node -v</code>    #查看node版本<br><code>npm -v</code>    #查看npm版本<br><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code>    #安装淘宝的cnpm 管理器<br><code>cnpm -v</code>    # 查看cnpm版本<br><code>cnpm install -g hexo-cli</code>    #安装hexo框架<br><code>hexo -v</code>    #查看hexo版本<br><code>mkdir blog</code>    #创建blog目录<br><code>cd blog</code>     #进入blog目录<br>sudo hexo init     #生成博客 初始化博客<br>hexo s    #启动本地博客服务<br><a href="http://localhost:4000/">http://localhost:4000/</a>    #本地访问地址<br>hexo n “我的第一篇文章” #创建新的文章 </p>
+<h5 id="返回blog目录"><a href="#返回blog目录" class="headerlink" title="返回blog目录"></a>返回blog目录</h5><p>hexo clean #清理<br>hexo g #生成</p>
+<h5 id="Github创建一个新的仓库-YourGithubName-github-io"><a href="#Github创建一个新的仓库-YourGithubName-github-io" class="headerlink" title="Github创建一个新的仓库 YourGithubName.github.io"></a>Github创建一个新的仓库 YourGithubName.github.io</h5><p>cnpm install –save hexo-deployer-git #在blog目录下安装git部署插件</p>
+<h5 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line">deploy:</span><br><span class="line"> 		type: git</span><br><span class="line">		  repo: https:&#x2F;&#x2F;github.com&#x2F;YourGithubName&#x2F;YourGithubName.github.io.git</span><br><span class="line"> 		branch: master</span><br></pre></td></tr></table></figure>
+<p>hexo d    #部署到Github仓库里<br><a href="https://yourgithubname.github.io/">https://YourGithubName.github.io/</a>  #访问这个地址可以查看博客</p>
+<p> git clone <a href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia  #下载yilia主题到本地</p>
+<p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
+<p>hexo c    #清理一下<br>hexo g    #生成<br>hexo d    #部署到远程Github仓库<br><a href="https://yourgithubname.github.io/">https://YourGithubName.github.io/</a>  #查看博客</p>
+<h3 id="uPic图床设置-token添加"><a href="#uPic图床设置-token添加" class="headerlink" title="uPic图床设置 token添加"></a>uPic图床设置 token添加</h3><h3 id="关于阿里云域名解析的设置"><a href="#关于阿里云域名解析的设置" class="headerlink" title="关于阿里云域名解析的设置"></a>关于阿里云域名解析的设置</h3><p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/uPic/rCct52.png" alt="rCct52"></p>
 <p>阿里云上这样设置(更新时间还是比较长的 一开始ping域名ping不同,后来还是ping不同,但是访问正常,以为设置不对,也不知道怎么处理,直接放了一天自动就好了,访问正常,域名定向也正常)</p>
 <p>github进入项目页面 选择Settings</p>
 <p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/images/20210105-bVsnaT.png" alt="20210105-bVsnaT"></p>
@@ -25,6 +22,21 @@
 ]]></content>
       <tags>
         <tag>hexo,github,upic,阿里云域名</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于markdown-preview.nvim安装失败的解决方法</title>
+    <url>/2021/01/05/%E5%85%B3%E4%BA%8Emarkdown-preview-nvim%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h5 id="mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功"><a href="#mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功" class="headerlink" title="mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功"></a>mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功</h5><p><code>Plug &#39;iamcco/markdown-preview.nvim&#39;, &#123; &#39;do&#39;: &#39;cd app &amp;&amp; yarn install&#39;  &#125;</code>  </p>
+<h5 id="经过排查mac一开始没有安装yarn-尝试了"><a href="#经过排查mac一开始没有安装yarn-尝试了" class="headerlink" title="经过排查mac一开始没有安装yarn,尝试了"></a>经过排查mac一开始没有安装yarn,尝试了</h5><p><code>brew install yarn</code>  </p>
+<h5 id="安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法"><a href="#安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法" class="headerlink" title="安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:"></a>安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:</h5><ol>
+<li>克隆完成后,进入plugin目录<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yarn install</span><br></pre></td></tr></table></figure></li>
+<li>使用终端代理proxychains4 启动nvim 挂代理安装插件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">proxychains4 nvim   </span><br><span class="line">PlugInstall</span><br></pre></td></tr></table></figure>
+安装后成功,再次启动nvim打开markdown文件:MarkdownPreview可以正常启动浏览器进行预览了</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>vim,neovim,markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -63,18 +75,15 @@
       </tags>
   </entry>
   <entry>
-    <title>关于markdown-preview.nvim安装失败的解决方法</title>
-    <url>/2021/01/05/%E5%85%B3%E4%BA%8Emarkdown-preview-nvim%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h5 id="mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功"><a href="#mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功" class="headerlink" title="mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功"></a>mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功</h5><p><code>Plug &#39;iamcco/markdown-preview.nvim&#39;, &#123; &#39;do&#39;: &#39;cd app &amp;&amp; yarn install&#39;  &#125;</code>  </p>
-<h5 id="经过排查mac一开始没有安装yarn-尝试了"><a href="#经过排查mac一开始没有安装yarn-尝试了" class="headerlink" title="经过排查mac一开始没有安装yarn,尝试了"></a>经过排查mac一开始没有安装yarn,尝试了</h5><p><code>brew install yarn</code>  </p>
-<h5 id="安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法"><a href="#安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法" class="headerlink" title="安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:"></a>安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:</h5><ol>
-<li>克隆完成后,进入plugin目录<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yarn install</span><br></pre></td></tr></table></figure></li>
-<li>使用终端代理proxychains4 启动nvim 挂代理安装插件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">proxychains4 nvim   </span><br><span class="line">PlugInstall</span><br></pre></td></tr></table></figure>
-安装后成功,再次启动nvim打开markdown文件:MarkdownPreview可以正常启动浏览器进行预览了</li>
-</ol>
+    <title>Mac系统常用软件配置记录</title>
+    <url>/2021/01/06/Mac%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h4 id="nvALT-随叫随到随处用的Mac速记工具"><a href="#nvALT-随叫随到随处用的Mac速记工具" class="headerlink" title="nvALT - 随叫随到随处用的Mac速记工具"></a>nvALT - 随叫随到随处用的Mac速记工具</h4><h4 id="unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具"><a href="#unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具" class="headerlink" title="unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具"></a>unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具</h4><h4 id="安装v2ray命令行代理工具和qv2ray图形界面工具"><a href="#安装v2ray命令行代理工具和qv2ray图形界面工具" class="headerlink" title="安装v2ray命令行代理工具和qv2ray图形界面工具"></a>安装v2ray命令行代理工具和qv2ray图形界面工具</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install v2ray  </span><br><span class="line">brew install qv2ray  </span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/images/20210106-v2U9yi.png" alt="20210106-v2U9yi"></p>
+<h4 id="几个重要的配置文件"><a href="#几个重要的配置文件" class="headerlink" title="几个重要的配置文件"></a>几个重要的配置文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.zshrc</span><br><span class="line">.tmux.conf</span><br><span class="line">.vimrc init.vim</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
-        <tag>vim,neovim,markdown</tag>
+        <tag>Mac,Soft,profile,config</tag>
       </tags>
   </entry>
 </search>
