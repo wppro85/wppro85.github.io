@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Mac系统常用软件配置记录</title>
+    <url>/2021/01/06/Mac%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h4 id="nvALT-随叫随到随处用的Mac速记工具"><a href="#nvALT-随叫随到随处用的Mac速记工具" class="headerlink" title="nvALT - 随叫随到随处用的Mac速记工具"></a>nvALT - 随叫随到随处用的Mac速记工具</h4><h4 id="unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具"><a href="#unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具" class="headerlink" title="unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具"></a>unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具</h4><h4 id="安装v2ray命令行代理工具和qv2ray图形界面工具"><a href="#安装v2ray命令行代理工具和qv2ray图形界面工具" class="headerlink" title="安装v2ray命令行代理工具和qv2ray图形界面工具"></a>安装v2ray命令行代理工具和qv2ray图形界面工具</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install v2ray  </span><br><span class="line">brew install qv2ray  </span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/images/20210106-v2U9yi.png" alt="20210106-v2U9yi"></p>
+<h4 id="几个重要的配置文件"><a href="#几个重要的配置文件" class="headerlink" title="几个重要的配置文件"></a>几个重要的配置文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.zshrc</span><br><span class="line">.tmux.conf</span><br><span class="line">.vimrc init.vim</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Mac,Soft,profile,config</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客搭建记录</title>
     <url>/2021/01/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h3 id="uPic图床设置-token添加"><a href="#uPic图床设置-token添加" class="headerlink" title="uPic图床设置 token添加"></a>uPic图床设置 token添加</h3><h3 id="关于阿里云域名解析的设置"><a href="#关于阿里云域名解析的设置" class="headerlink" title="关于阿里云域名解析的设置"></a>关于阿里云域名解析的设置</h3><p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/uPic/rCct52.png" alt="rCct52"></p>
