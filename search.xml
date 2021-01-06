@@ -28,9 +28,9 @@
       </tags>
   </entry>
   <entry>
-    <title>i3问题记录</title>
+    <title>安装i3版本manjaro的安装记录</title>
     <url>/2021/01/05/i3-manjaro%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h2 id="安装i3版本manjaro的安装记录"><a href="#安装i3版本manjaro的安装记录" class="headerlink" title="安装i3版本manjaro的安装记录"></a>安装i3版本manjaro的安装记录</h2><h4 id="解决外接机械键盘功能键区无法使用的问题"><a href="#解决外接机械键盘功能键区无法使用的问题" class="headerlink" title="解决外接机械键盘功能键区无法使用的问题"></a>解决外接机械键盘功能键区无法使用的问题</h4><p><strong>参考文件</strong>:<br>How to swap the “fn” use of Function keys on an Apple Keyboard in Linux<br><a href="https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux">https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux</a></p>
+    <content><![CDATA[<h4 id="解决外接机械键盘功能键区无法使用的问题"><a href="#解决外接机械键盘功能键区无法使用的问题" class="headerlink" title="解决外接机械键盘功能键区无法使用的问题"></a>解决外接机械键盘功能键区无法使用的问题</h4><p><strong>参考文件</strong>:<br>How to swap the “fn” use of Function keys on an Apple Keyboard in Linux<br><a href="https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux">https://superuser.com/questions/79822/how-to-swap-the-fn-use-of-function-keys-on-an-apple-keyboard-in-linux</a></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo 0 &gt; &#x2F;sys&#x2F;module&#x2F;hid_apple&#x2F;parameters&#x2F;fnmode</span><br></pre></td></tr></table></figure>
 <p>Or, in case of permission issue:<br>    echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode</p>
 <p>This will prevent you from having to reboot. Adding the option is a good idea, so the change persists through reboots.<br>0 = Fn key disabled<br>1 = Fn key pressed by default<br>2 = Fn key released by default<br>From <code>/drivers/hid/hid-apple.c</code> line 42:<br>   Mode of fn key on Apple keyboards (0 = disabled, [1] = fkeyslast, 2 = fkeysfirst) </p>
