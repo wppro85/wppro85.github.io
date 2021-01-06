@@ -416,7 +416,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-06 09:18:34" itemprop="dateModified" datetime="2021-01-06T09:18:34+08:00">2021-01-06</time>
+                <time title="Modified: 2021-01-06 09:22:02" itemprop="dateModified" datetime="2021-01-06T09:22:02+08:00">2021-01-06</time>
               </span>
 
           
@@ -435,8 +435,10 @@
 <h5 id="Github创建一个新的仓库-YourGithubName-github-io"><a href="#Github创建一个新的仓库-YourGithubName-github-io" class="headerlink" title="Github创建一个新的仓库 YourGithubName.github.io"></a>Github创建一个新的仓库 YourGithubName.github.io</h5><p><code>cnpm install --save hexo-deployer-git</code> #在blog目录下安装git部署插件</p>
 <h5 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html</span><br><span class="line"> deploy:</span><br><span class="line">   type: git</span><br><span class="line">   repo: https:&#x2F;&#x2F;github.com&#x2F;YourGithubName&#x2F;YourGithubName.github.io.git</span><br><span class="line">   branch: master</span><br></pre></td></tr></table></figure>
 <p><code>hexo d</code>    #部署到Github仓库里<br><code>https://YourGithubName.github.io/</code>  #访问这个地址可以查看博客</p>
-<h5 id="配置next主题"><a href="#配置next主题" class="headerlink" title="配置next主题"></a>配置next主题</h5><p><code>git clone https://github.com/iissnan/hexo-theme-next.git themes/next</code> #下载yilia主题到本地</p>
-<p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
+<h5 id="配置next主题"><a href="#配置next主题" class="headerlink" title="配置next主题"></a>配置next主题</h5><p><code>git clone https://github.com/iissnan/hexo-theme-next.git themes/next</code> #下载next主题到本地,这个主题直接带全文内容搜索,界面比较简洁</p>
+<img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/images/20210106-image-20210106092140528.png" alt="image-20210106092140528" style="zoom:25%;" />
+
+<p>#修改hexo根目录下的 _config.yml 文件 ： theme: next</p>
 <p><code>hexo c</code>    #清理一下<br><code>hexo g</code>    #生成<br><code>hexo d</code>    #部署到远程Github仓库<br><code>https://YourGithubName.github.io/</code>  #查看博客</p>
 <h4 id="uPic图床设置-token添加"><a href="#uPic图床设置-token添加" class="headerlink" title="uPic图床设置 token添加"></a>uPic图床设置 token添加</h4><h4 id="关于阿里云域名解析的设置"><a href="#关于阿里云域名解析的设置" class="headerlink" title="关于阿里云域名解析的设置"></a>关于阿里云域名解析的设置</h4><p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/uPic/rCct52.png" alt="rCct52"></p>
 <p>阿里云上这样设置(更新时间还是比较长的 一开始ping域名ping不同,后来还是ping不同,但是访问正常,以为设置不对,也不知道怎么处理,直接放了一天自动就好了,访问正常,域名定向也正常)</p>
