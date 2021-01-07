@@ -204,7 +204,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-07 23:05:28" itemprop="dateModified" datetime="2021-01-07T23:05:28+08:00">2021-01-07</time>
+                <time title="Modified: 2021-01-07 18:05:49" itemprop="dateModified" datetime="2021-01-07T18:05:49+08:00">2021-01-07</time>
               </span>
 
           
@@ -272,7 +272,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-07 23:05:28" itemprop="dateModified" datetime="2021-01-07T23:05:28+08:00">2021-01-07</time>
+                <time title="Modified: 2021-01-07 18:05:49" itemprop="dateModified" datetime="2021-01-07T18:05:49+08:00">2021-01-07</time>
               </span>
 
           
@@ -343,7 +343,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-07 23:05:28" itemprop="dateModified" datetime="2021-01-07T23:05:28+08:00">2021-01-07</time>
+                <time title="Modified: 2021-01-07 18:57:31" itemprop="dateModified" datetime="2021-01-07T18:57:31+08:00">2021-01-07</time>
               </span>
 
           
@@ -386,6 +386,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set -g default-terminal &quot;tmux-256color&quot;</span><br><span class="line">set-option -a terminal-overrides &quot;,*256col*:RGB&quot;</span><br></pre></td></tr></table></figure>
 <h4 id="小工具"><a href="#小工具" class="headerlink" title="小工具"></a>小工具</h4><p>下载：t-get (命令行工具， npm install -g t-get)<br>虚拟机：VirtualBox<br>模拟器：qemu, bochs<br>快速跳转工具: z一个目录跳转工具，相当于加强版的<code>cd</code>，首先去<a target="_blank" rel="noopener" href="https://github.com/rupa/z">戳这里</a>下载，是一个脚本，接着添加到<code>~/.zshrc</code>中：</p>
 <h4 id="开发工具配置"><a href="#开发工具配置" class="headerlink" title="开发工具配置"></a>开发工具配置</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/139388970">https://zhuanlan.zhihu.com/p/139388970</a></p>
+<h4 id="Linux终端PATH配置方式"><a href="#Linux终端PATH配置方式" class="headerlink" title="Linux终端PATH配置方式"></a>Linux终端PATH配置方式</h4><h5 id="zsh-bash添加环境变量"><a href="#zsh-bash添加环境变量" class="headerlink" title="zsh,bash添加环境变量:"></a>zsh,bash添加环境变量:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.zshrc</span><br><span class="line">nvim ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure>
+<p>添加以下内容:<br><code>export PATH=$PATH:~/hexo/node_modules/.bin</code></p>
+<h5 id="fish添加环境变量"><a href="#fish添加环境变量" class="headerlink" title="fish添加环境变量"></a>fish添加环境变量</h5><p>参考内容: <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell">https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell</a><br><code>set -U fish_user_paths ~/hexo/node_modules/.bin $fish_user_paths</code></p>
 
       
     </div>
@@ -436,7 +439,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-07 23:11:02" itemprop="dateModified" datetime="2021-01-07T23:11:02+08:00">2021-01-07</time>
+                <time title="Modified: 2021-01-07 18:59:35" itemprop="dateModified" datetime="2021-01-07T18:59:35+08:00">2021-01-07</time>
               </span>
 
           
@@ -467,11 +470,20 @@
 <p>这里需要注意本地blog(hexo项目)文件夹下 必须在source目录(不是source/_posts目录)下保持CNAME文件与github一致,否则每次更新都会删除 github的CNAME文件,造成域名定向失败.</p>
 <h4 id="通过github多设备管理hexo内容"><a href="#通过github多设备管理hexo内容" class="headerlink" title="通过github多设备管理hexo内容"></a>通过github多设备管理hexo内容</h4><p>参考文件:  </p>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014568993/article/details/84308188">https://blog.csdn.net/u014568993/article/details/84308188</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0558c041e56d">https://www.jianshu.com/p/0558c041e56d</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014568993/article/details/84308188">https://blog.csdn.net/u014568993/article/details/84308188</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0558c041e56d">https://www.jianshu.com/p/0558c041e56d</a>  <blockquote>
+<ol>
+<li>hexo new <blog-title> #撰写博客</li>
+<li>hexo s -g （本地查看是否正常）</li>
+<li>hexo d （将本地文件push到master分支上）</li>
+<li>hexo clean(清除不必要文件)</li>
+<li>git add .、 git commit -m “comment” 、 git push （将hexog分支保存为最新状态）</li>
 </ol>
-<h4 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容:"></a>参考内容:</h4><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">https://www.bilibili.com/video/BV1Yb411a7ty</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138012354">https://zhuanlan.zhihu.com/p/138012354</a><br><a target="_blank" rel="noopener" href="https://blog.svend.cc/upic/tutorials/github/">https://blog.svend.cc/upic/tutorials/github/</a></p>
+</blockquote>
+<h5 id="这里正好有个配置的问题一并记录："><a href="#这里正好有个配置的问题一并记录：" class="headerlink" title="这里正好有个配置的问题一并记录："></a>这里正好有个配置的问题一并记录：</h5>我是用的manjaro i3系统 终端使用了fish 和zsh 默认fish<br>git clone成功以后,无法直接使用hexo命令，经过查询应该将~/hexo/node_modules/.bin目录加入PATH  <h4 id="zsh-bash添加环境变量"><a href="#zsh-bash添加环境变量" class="headerlink" title="zsh,bash添加环境变量:"></a>zsh,bash添加环境变量:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.zshrc</span><br><span class="line">nvim ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure>
+添加以下内容:<br><code>export PATH=$PATH:~/hexo/node_modules/.bin</code>  <h4 id="fish添加环境变量"><a href="#fish添加环境变量" class="headerlink" title="fish添加环境变量"></a>fish添加环境变量</h4>参考内容: <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell">https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell</a><br><code>set -U fish_user_paths ~/hexo/node_modules/.bin $fish_user_paths</code></li>
+</ol>
+<h4 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容:"></a>参考内容:</h4><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">https://www.bilibili.com/video/BV1Yb411a7ty</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138012354">https://zhuanlan.zhihu.com/p/138012354</a><br><a target="_blank" rel="noopener" href="https://blog.svend.cc/upic/tutorials/github/">https://blog.svend.cc/upic/tutorials/github/</a></p>
 
       
     </div>

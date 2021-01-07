@@ -191,3 +191,21 @@ set-option -a terminal-overrides ",*256col*:RGB"
 #### 开发工具配置
 [https://zhuanlan.zhihu.com/p/139388970](https://zhuanlan.zhihu.com/p/139388970)
 
+#### Linux终端PATH配置方式
+##### zsh,bash添加环境变量:  
+```
+nvim ~/.zshrc
+nvim ~/.bashrc
+```
+添加以下内容:  
+`export PATH=$PATH:~/hexo/node_modules/.bin`
+
+##### fish添加环境变量
+参考内容: https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell  
+`set -U fish_user_paths ~/hexo/node_modules/.bin $fish_user_paths`
+
+
+
+
+
+

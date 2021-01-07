@@ -74,15 +74,28 @@ github进入项目页面 选择Settings
 
 #### 通过github多设备管理hexo内容
 参考文件:  
-1. https://blog.csdn.net/u014568993/article/details/84308188
-2. https://www.jianshu.com/p/0558c041e56d
-
-
+1. https://blog.csdn.net/u014568993/article/details/84308188  
+2. https://www.jianshu.com/p/0558c041e56d  
+>1. hexo new <blog-title> #撰写博客
+>2. hexo s -g （本地查看是否正常）
+>3. hexo d （将本地文件push到master分支上）
+>4. hexo clean(清除不必要文件)
+>5. git add .、 git commit -m "comment" 、 git push （将hexog分支保存为最新状态）
+##### 这里正好有个配置的问题一并记录：  
+我是用的manjaro i3系统 终端使用了fish 和zsh 默认fish  
+git clone成功以后,无法直接使用hexo命令，经过查询应该将~/hexo/node_modules/.bin目录加入PATH  
+#### zsh,bash添加环境变量:  
+```
+nvim ~/.zshrc
+nvim ~/.bashrc
+```
+添加以下内容:  
+`export PATH=$PATH:~/hexo/node_modules/.bin`  
+#### fish添加环境变量
+参考内容: https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell  
+`set -U fish_user_paths ~/hexo/node_modules/.bin $fish_user_paths`
 
 #### 参考内容:
-
 https://www.bilibili.com/video/BV1Yb411a7ty
-
 https://zhuanlan.zhihu.com/p/138012354
 https://blog.svend.cc/upic/tutorials/github/
-
