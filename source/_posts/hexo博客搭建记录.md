@@ -95,6 +95,73 @@ nvim ~/.bashrc
 参考内容: https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell  
 `set -U fish_user_paths ~/hexo/node_modules/.bin $fish_user_paths`
 
+##### 新的设备hexo clean 和hexo d有两个错误
+1. 通过删除 ~/hexo/node_modules目录，重新安装相关依赖解决
+```
+npm install hexo-generator-index --save
+npm install hexo-generator-archive --save
+npm install hexo-generator-category --save
+npm install hexo-generator-tag --save
+npm install hexo-server --save
+npm install hexo-deployer-git --save
+npm install hexo-deployer-heroku --save
+npm install hexo-deployer-rsync --save
+npm install hexo-deployer-openshift --save
+npm install hexo-renderer-marked@0.2 --save
+npm install hexo-renderer-stylus@0.2 --save
+npm install hexo-generator-feed@1 --save
+npm install hexo-generator-sitemap@1 --save
+npm install hexo-generator-search --save
+npm install hexo-generator-searchdb --save
+```
+2. 当出现类似下面的信息时，直接删除.deploy_git文件夹，然后执行hexo d即可，其会重新生成的。
+```
+INFO  Deploying: git
+INFO  Clearing .deploy_git folder...
+INFO  Copying files from public folder...
+fatal: 位于未检出的子模组 '.deploy_git'
+Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+... ...
+```
+删除后提示 找不到有效的邮箱、用户名:  
+通过一下命令设置全局的用户名 邮箱  
+
+```
+git config --global user.name [username]
+git config --global user.email [email]
+```
+每次提交还需要输入github用户名和密码：   
+通过以下命令进行修改
+```
+echo "[credential]" >> .git/config
+echo "    helper = store" >> .git/config
+```
+或者直接修改.git/config文件  
+```
+##修改成如下
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/wppro85/wppro85.github.io.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "hexo"]
+	remote = origin
+	merge = refs/heads/hexo
+[credential]
+    helper = store
+```
+设置全局的方式:  
+```
+git config --global credential.helper store
+```
+或者修改用户目录下的.gitconfig文件:  
+```
+[credential]
+    helper = sotre
+```
 #### 参考内容:
 https://www.bilibili.com/video/BV1Yb411a7ty
 https://zhuanlan.zhihu.com/p/138012354
