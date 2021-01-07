@@ -343,7 +343,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-07 23:05:28" itemprop="dateModified" datetime="2021-01-07T23:05:28+08:00">2021-01-07</time>
+                <time title="Modified: 2021-01-08 00:53:22" itemprop="dateModified" datetime="2021-01-08T00:53:22+08:00">2021-01-08</time>
               </span>
 
           
@@ -386,6 +386,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set -g default-terminal &quot;tmux-256color&quot;</span><br><span class="line">set-option -a terminal-overrides &quot;,*256col*:RGB&quot;</span><br></pre></td></tr></table></figure>
 <h4 id="小工具"><a href="#小工具" class="headerlink" title="小工具"></a>小工具</h4><p>下载：t-get (命令行工具， npm install -g t-get)<br>虚拟机：VirtualBox<br>模拟器：qemu, bochs<br>快速跳转工具: z一个目录跳转工具，相当于加强版的<code>cd</code>，首先去<a target="_blank" rel="noopener" href="https://github.com/rupa/z">戳这里</a>下载，是一个脚本，接着添加到<code>~/.zshrc</code>中：</p>
 <h4 id="开发工具配置"><a href="#开发工具配置" class="headerlink" title="开发工具配置"></a>开发工具配置</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/139388970">https://zhuanlan.zhihu.com/p/139388970</a></p>
+<h4 id="Linux终端PATH配置方式"><a href="#Linux终端PATH配置方式" class="headerlink" title="Linux终端PATH配置方式"></a>Linux终端PATH配置方式</h4><h5 id="zsh-bash添加环境变量"><a href="#zsh-bash添加环境变量" class="headerlink" title="zsh,bash添加环境变量:"></a>zsh,bash添加环境变量:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.zshrc</span><br><span class="line">nvim ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure>
+<p>添加以下内容:<br><code>export PATH=$PATH:~/hexo/node_modules/.bin</code></p>
+<h5 id="fish添加环境变量"><a href="#fish添加环境变量" class="headerlink" title="fish添加环境变量"></a>fish添加环境变量</h5><p>参考内容: <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell">https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell</a><br><code>set -U fish_user_paths ~/hexo/node_modules/.bin $fish_user_paths</code></p>
 
       
     </div>
@@ -436,7 +439,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-07 23:11:02" itemprop="dateModified" datetime="2021-01-07T23:11:02+08:00">2021-01-07</time>
+                <time title="Modified: 2021-01-08 00:53:22" itemprop="dateModified" datetime="2021-01-08T00:53:22+08:00">2021-01-08</time>
               </span>
 
           
@@ -467,11 +470,27 @@
 <p>这里需要注意本地blog(hexo项目)文件夹下 必须在source目录(不是source/_posts目录)下保持CNAME文件与github一致,否则每次更新都会删除 github的CNAME文件,造成域名定向失败.</p>
 <h4 id="通过github多设备管理hexo内容"><a href="#通过github多设备管理hexo内容" class="headerlink" title="通过github多设备管理hexo内容"></a>通过github多设备管理hexo内容</h4><p>参考文件:  </p>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014568993/article/details/84308188">https://blog.csdn.net/u014568993/article/details/84308188</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0558c041e56d">https://www.jianshu.com/p/0558c041e56d</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014568993/article/details/84308188">https://blog.csdn.net/u014568993/article/details/84308188</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0558c041e56d">https://www.jianshu.com/p/0558c041e56d</a>  <blockquote>
+<ol>
+<li>hexo new <blog-title> #撰写博客</li>
+<li>hexo s -g （本地查看是否正常）</li>
+<li>hexo d （将本地文件push到master分支上）</li>
+<li>hexo clean(清除不必要文件)</li>
+<li>git add .、 git commit -m “comment” 、 git push （将hexog分支保存为最新状态）</li>
 </ol>
-<h4 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容:"></a>参考内容:</h4><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">https://www.bilibili.com/video/BV1Yb411a7ty</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138012354">https://zhuanlan.zhihu.com/p/138012354</a><br><a target="_blank" rel="noopener" href="https://blog.svend.cc/upic/tutorials/github/">https://blog.svend.cc/upic/tutorials/github/</a></p>
+</blockquote>
+<h5 id="这里正好有个配置的问题一并记录："><a href="#这里正好有个配置的问题一并记录：" class="headerlink" title="这里正好有个配置的问题一并记录："></a>这里正好有个配置的问题一并记录：</h5>我是用的manjaro i3系统 终端使用了fish 和zsh 默认fish<br>git clone成功以后,无法直接使用hexo命令，经过查询应该将~/hexo/node_modules/.bin目录加入PATH  <h4 id="zsh-bash添加环境变量"><a href="#zsh-bash添加环境变量" class="headerlink" title="zsh,bash添加环境变量:"></a>zsh,bash添加环境变量:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.zshrc</span><br><span class="line">nvim ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure>
+添加以下内容:<br><code>export PATH=$PATH:~/hexo/node_modules/.bin</code>  <h4 id="fish添加环境变量"><a href="#fish添加环境变量" class="headerlink" title="fish添加环境变量"></a>fish添加环境变量</h4>参考内容: <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell">https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell</a><br><code>set -U fish_user_paths ~/hexo/node_modules/.bin $fish_user_paths</code></li>
+</ol>
+<h5 id="新的设备hexo-clean-和hexo-d有两个错误"><a href="#新的设备hexo-clean-和hexo-d有两个错误" class="headerlink" title="新的设备hexo clean 和hexo d有两个错误"></a>新的设备hexo clean 和hexo d有两个错误</h5><ol>
+<li>通过删除 ~/hexo/node_modules目录，重新安装相关依赖解决<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-category --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-heroku --save</span><br><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line">npm install hexo-deployer-openshift --save</span><br><span class="line">npm install hexo-renderer-marked@0.2 --save</span><br><span class="line">npm install hexo-renderer-stylus@0.2 --save</span><br><span class="line">npm install hexo-generator-feed@1 --save</span><br><span class="line">npm install hexo-generator-sitemap@1 --save</span><br><span class="line">npm install hexo-generator-search --save</span><br><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></li>
+<li>当出现类似下面的信息时，直接删除.deploy_git文件夹，然后执行hexo d即可，其会重新生成的。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">fatal: 位于未检出的子模组 &#39;.deploy_git&#39;</span><br><span class="line">Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.html</span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
+删除后提示 找不到有效的邮箱、用户名:<br>通过一下命令设置全局的用户名 邮箱  </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name [username]</span><br><span class="line">git config --global user.email [email]</span><br></pre></td></tr></table></figure>
+<p>每次提交还需要输入github用户名和密码：<br>通过以下命令进行修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;[credential]&quot; &gt;&gt; .git&#x2F;config</span><br><span class="line">echo &quot;    helper &#x3D; store&quot; &gt;&gt; .git&#x2F;config</span><br></pre></td></tr></table></figure><br>或者直接修改.git/config文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">##修改成如下</span><br><span class="line">[core]</span><br><span class="line">	repositoryformatversion &#x3D; 0</span><br><span class="line">	filemode &#x3D; true</span><br><span class="line">	bare &#x3D; false</span><br><span class="line">	logallrefupdates &#x3D; true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">	url &#x3D; https:&#x2F;&#x2F;github.com&#x2F;wppro85&#x2F;wppro85.github.io.git</span><br><span class="line">	fetch &#x3D; +refs&#x2F;heads&#x2F;*:refs&#x2F;remotes&#x2F;origin&#x2F;*</span><br><span class="line">[branch &quot;hexo&quot;]</span><br><span class="line">	remote &#x3D; origin</span><br><span class="line">	merge &#x3D; refs&#x2F;heads&#x2F;hexo</span><br><span class="line">[credential]</span><br><span class="line">    helper &#x3D; store</span><br></pre></td></tr></table></figure><br>设置全局的方式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure><br>或者修改用户目录下的.gitconfig文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[credential]</span><br><span class="line">    helper &#x3D; sotre</span><br></pre></td></tr></table></figure></p>
+<h4 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容:"></a>参考内容:</h4><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">https://www.bilibili.com/video/BV1Yb411a7ty</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138012354">https://zhuanlan.zhihu.com/p/138012354</a><br><a target="_blank" rel="noopener" href="https://blog.svend.cc/upic/tutorials/github/">https://blog.svend.cc/upic/tutorials/github/</a></p>
 
       
     </div>
