@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Mac系统常用软件配置记录</title>
-    <url>/2021/01/06/Mac%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h4 id="nvALT-随叫随到随处用的Mac速记工具"><a href="#nvALT-随叫随到随处用的Mac速记工具" class="headerlink" title="nvALT - 随叫随到随处用的Mac速记工具"></a>nvALT - 随叫随到随处用的Mac速记工具</h4><h4 id="unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具"><a href="#unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具" class="headerlink" title="unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具"></a>unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具</h4><h4 id="安装v2ray命令行代理工具和qv2ray图形界面工具"><a href="#安装v2ray命令行代理工具和qv2ray图形界面工具" class="headerlink" title="安装v2ray命令行代理工具和qv2ray图形界面工具"></a>安装v2ray命令行代理工具和qv2ray图形界面工具</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install v2ray  </span><br><span class="line">brew install qv2ray  </span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/images/20210106-v2U9yi.png" alt="20210106-v2U9yi"></p>
-<h4 id="几个重要的配置文件"><a href="#几个重要的配置文件" class="headerlink" title="几个重要的配置文件"></a>几个重要的配置文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.zshrc</span><br><span class="line">.tmux.conf</span><br><span class="line">.vimrc init.vim</span><br></pre></td></tr></table></figure>
-<h4 id="Mac系下解决neovim输入中文后-退出插入模式后自动切换成英文输入法"><a href="#Mac系下解决neovim输入中文后-退出插入模式后自动切换成英文输入法" class="headerlink" title="Mac系下解决neovim输入中文后 退出插入模式后自动切换成英文输入法"></a>Mac系下解决neovim输入中文后 退出插入模式后自动切换成英文输入法</h4><p>参考内容:<a href="https://github.com/hiberabyss/smartim">https://github.com/hiberabyss/smartim</a><br>但是对于我的VIM和MAC来说还有两步需要设置<br>1.把im-select拷贝到/usr/local/bin<br><code>sudo cp ~/.vim/plugged/smartim/plugin/im-select /usr/local/bin/</code><br>确保在终端下可以直接使用im-select<br>2.修改lin.vim的配置<br><code>nvim ~/.vim/user.vim</code><br>加入以下内容:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 13. im-select配置</span><br><span class="line">let g:smartim_default &#x3D; &#39;com.apple.keylayout.ABC&#39;</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>Mac,Soft,profile,config</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客搭建记录</title>
     <url>/2021/01/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h4 id="安装hexo完成初始化配置"><a href="#安装hexo完成初始化配置" class="headerlink" title="安装hexo完成初始化配置"></a>安装hexo完成初始化配置</h4><h5 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h5><p><code>node -v</code>    #查看node版本<br><code>npm -v</code>    #查看npm版本<br><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code>    #安装淘宝的cnpm 管理器<br><code>cnpm -v</code>    # 查看cnpm版本<br><code>cnpm install -g hexo-cli</code>    #安装hexo框架<br><code>hexo -v</code>    #查看hexo版本<br><code>mkdir blog</code>    #创建blog目录<br><code>cd blog</code>     #进入blog目录<br><code>sudo hexo init</code>     #生成博客 初始化博客<br><code>hexo s</code>    #启动本地博客服务<br><code>http://localhost:4000/</code>    #本地访问地址<br><code>hexo n &quot;我的第一篇文章&quot;</code> #创建新的文章 </p>
@@ -30,12 +18,43 @@
 <p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/images/20210105-bVsnaT.png" alt="20210105-bVsnaT"></p>
 <p>项目目录下会自动生成CNAME文件,内容就是绑定的域名</p>
 <p>这里需要注意本地blog(hexo项目)文件夹下 必须在source目录(不是source/_posts目录)下保持CNAME文件与github一致,否则每次更新都会删除 github的CNAME文件,造成域名定向失败.</p>
-<h4 id="通过github多设备管理hexo内容"><a href="#通过github多设备管理hexo内容" class="headerlink" title="通过github多设备管理hexo内容"></a>通过github多设备管理hexo内容</h4><p>后续更新…</p>
+<h4 id="通过github多设备管理hexo内容"><a href="#通过github多设备管理hexo内容" class="headerlink" title="通过github多设备管理hexo内容"></a>通过github多设备管理hexo内容</h4><p>参考文件:  </p>
+<ol>
+<li><a href="https://blog.csdn.net/u014568993/article/details/84308188">https://blog.csdn.net/u014568993/article/details/84308188</a></li>
+<li><a href="https://www.jianshu.com/p/0558c041e56d">https://www.jianshu.com/p/0558c041e56d</a></li>
+</ol>
 <h4 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容:"></a>参考内容:</h4><p><a href="https://www.bilibili.com/video/BV1Yb411a7ty">https://www.bilibili.com/video/BV1Yb411a7ty</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/138012354">https://zhuanlan.zhihu.com/p/138012354</a><br><a href="https://blog.svend.cc/upic/tutorials/github/">https://blog.svend.cc/upic/tutorials/github/</a></p>
 ]]></content>
       <tags>
         <tag>hexo,github,upic,阿里云域名</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac系统常用软件配置记录</title>
+    <url>/2021/01/06/Mac%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h4 id="nvALT-随叫随到随处用的Mac速记工具"><a href="#nvALT-随叫随到随处用的Mac速记工具" class="headerlink" title="nvALT - 随叫随到随处用的Mac速记工具"></a>nvALT - 随叫随到随处用的Mac速记工具</h4><h4 id="unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具"><a href="#unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具" class="headerlink" title="unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具"></a>unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具</h4><h4 id="安装v2ray命令行代理工具和qv2ray图形界面工具"><a href="#安装v2ray命令行代理工具和qv2ray图形界面工具" class="headerlink" title="安装v2ray命令行代理工具和qv2ray图形界面工具"></a>安装v2ray命令行代理工具和qv2ray图形界面工具</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew install v2ray  </span><br><span class="line">brew install qv2ray  </span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/images/20210106-v2U9yi.png" alt="20210106-v2U9yi"></p>
+<h4 id="几个重要的配置文件"><a href="#几个重要的配置文件" class="headerlink" title="几个重要的配置文件"></a>几个重要的配置文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.zshrc</span><br><span class="line">.tmux.conf</span><br><span class="line">.vimrc init.vim</span><br></pre></td></tr></table></figure>
+<h4 id="Mac系下解决neovim输入中文后-退出插入模式后自动切换成英文输入法"><a href="#Mac系下解决neovim输入中文后-退出插入模式后自动切换成英文输入法" class="headerlink" title="Mac系下解决neovim输入中文后 退出插入模式后自动切换成英文输入法"></a>Mac系下解决neovim输入中文后 退出插入模式后自动切换成英文输入法</h4><p>参考内容:<a href="https://github.com/hiberabyss/smartim">https://github.com/hiberabyss/smartim</a><br>但是对于我的VIM和MAC来说还有两步需要设置<br>1.把im-select拷贝到/usr/local/bin<br><code>sudo cp ~/.vim/plugged/smartim/plugin/im-select /usr/local/bin/</code><br>确保在终端下可以直接使用im-select<br>2.修改lin.vim的配置<br><code>nvim ~/.vim/user.vim</code><br>加入以下内容:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; 13. im-select配置</span><br><span class="line">let g:smartim_default &#x3D; &#39;com.apple.keylayout.ABC&#39;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>Mac,Soft,profile,config</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于markdown-preview.nvim安装失败的解决方法</title>
+    <url>/2021/01/05/%E5%85%B3%E4%BA%8Emarkdown-preview-nvim%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h5 id="mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功"><a href="#mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功" class="headerlink" title="mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功"></a>mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功</h5><p><code>Plug &#39;iamcco/markdown-preview.nvim&#39;, &#123; &#39;do&#39;: &#39;cd app &amp;&amp; yarn install&#39;  &#125;</code>  </p>
+<h5 id="经过排查mac一开始没有安装yarn-尝试了"><a href="#经过排查mac一开始没有安装yarn-尝试了" class="headerlink" title="经过排查mac一开始没有安装yarn,尝试了"></a>经过排查mac一开始没有安装yarn,尝试了</h5><p><code>brew install yarn</code>  </p>
+<h5 id="安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法"><a href="#安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法" class="headerlink" title="安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:"></a>安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:</h5><ol>
+<li>克隆完成后,进入plugin目录<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yarn install</span><br></pre></td></tr></table></figure></li>
+<li>使用终端代理proxychains4 启动nvim 挂代理安装插件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">proxychains4 nvim   </span><br><span class="line">PlugInstall</span><br></pre></td></tr></table></figure>
+安装后成功,再次启动nvim打开markdown文件:MarkdownPreview可以正常启动浏览器进行预览了</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>vim,neovim,markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -73,21 +92,6 @@
 ]]></content>
       <tags>
         <tag>i3,manjaro</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于markdown-preview.nvim安装失败的解决方法</title>
-    <url>/2021/01/05/%E5%85%B3%E4%BA%8Emarkdown-preview-nvim%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h5 id="mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功"><a href="#mac下采用了官方的配置文件进行安装a-即使挂了代理也无法安装成功" class="headerlink" title="mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功"></a>mac下采用了官方的配置文件进行安装a,即使挂了代理也无法安装成功</h5><p><code>Plug &#39;iamcco/markdown-preview.nvim&#39;, &#123; &#39;do&#39;: &#39;cd app &amp;&amp; yarn install&#39;  &#125;</code>  </p>
-<h5 id="经过排查mac一开始没有安装yarn-尝试了"><a href="#经过排查mac一开始没有安装yarn-尝试了" class="headerlink" title="经过排查mac一开始没有安装yarn,尝试了"></a>经过排查mac一开始没有安装yarn,尝试了</h5><p><code>brew install yarn</code>  </p>
-<h5 id="安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法"><a href="#安装后依然无法安装成功markdown-preview-等待时间较长-尝试了以下方法" class="headerlink" title="安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:"></a>安装后依然无法安装成功markdown-preview,等待时间较长,尝试了以下方法:</h5><ol>
-<li>克隆完成后,进入plugin目录<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yarn install</span><br></pre></td></tr></table></figure></li>
-<li>使用终端代理proxychains4 启动nvim 挂代理安装插件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">proxychains4 nvim   </span><br><span class="line">PlugInstall</span><br></pre></td></tr></table></figure>
-安装后成功,再次启动nvim打开markdown文件:MarkdownPreview可以正常启动浏览器进行预览了</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>vim,neovim,markdown</tag>
       </tags>
   </entry>
 </search>
