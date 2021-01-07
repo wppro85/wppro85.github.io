@@ -153,11 +153,12 @@ echo "    helper = store" >> .git/config
 [credential]
     helper = store
 ```
-设置全局的方式:  
+我这次使用了hexo目录下的.git配置是无效的,然后使用了全局的修改后才可以免输入用户名密码  
+##### 设置全局的方式:  
 ```
 git config --global credential.helper store
 ```
-或者修改用户目录下的.gitconfig文件:  
+##### 或者修改用户目录下的.gitconfig文件:  
 ```
 [credential]
     helper = sotre
