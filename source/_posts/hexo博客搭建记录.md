@@ -73,8 +73,9 @@ github进入项目页面 选择Settings
 这里需要注意本地blog(hexo项目)文件夹下 必须在source目录(不是source/_posts目录)下保持CNAME文件与github一致,否则每次更新都会删除 github的CNAME文件,造成域名定向失败.
 
 #### 通过github多设备管理hexo内容
-
-后续更新...
+参考文件:  
+1. https://blog.csdn.net/u014568993/article/details/84308188
+2. https://www.jianshu.com/p/0558c041e56d
 
 
 
