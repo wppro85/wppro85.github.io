@@ -343,7 +343,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-08 00:53:22" itemprop="dateModified" datetime="2021-01-08T00:53:22+08:00">2021-01-08</time>
+                <time title="Modified: 2021-01-09 16:38:49" itemprop="dateModified" datetime="2021-01-09T16:38:49+08:00">2021-01-09</time>
               </span>
 
           
@@ -389,6 +389,18 @@
 <h4 id="Linux终端PATH配置方式"><a href="#Linux终端PATH配置方式" class="headerlink" title="Linux终端PATH配置方式"></a>Linux终端PATH配置方式</h4><h5 id="zsh-bash添加环境变量"><a href="#zsh-bash添加环境变量" class="headerlink" title="zsh,bash添加环境变量:"></a>zsh,bash添加环境变量:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.zshrc</span><br><span class="line">nvim ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure>
 <p>添加以下内容:<br><code>export PATH=$PATH:~/hexo/node_modules/.bin</code></p>
 <h5 id="fish添加环境变量"><a href="#fish添加环境变量" class="headerlink" title="fish添加环境变量"></a>fish添加环境变量</h5><p>参考内容: <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell">https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell</a><br><code>set -U fish_user_paths ~/hexo/node_modules/.bin $fish_user_paths</code></p>
+<h5 id="google-chrome浏览器无法在manjaro下设置代理"><a href="#google-chrome浏览器无法在manjaro下设置代理" class="headerlink" title="google-chrome浏览器无法在manjaro下设置代理"></a>google-chrome浏览器无法在manjaro下设置代理</h5><p>Firefox,可以设置全局代理,通过qv2ray进行代理即可正常访问google<br>Chrome、Chromium无法设置系统代理,必须通过插件或者命令行</p>
+<h6 id="方式一-通过命令行启动代理上网"><a href="#方式一-通过命令行启动代理上网" class="headerlink" title="方式一:通过命令行启动代理上网"></a>方式一:通过命令行启动代理上网</h6><p><code>google-chrome-stable --proxy-server=socks5://127.0.0.1:1089</code>  </p>
+<h6 id="方式二-通过switchy-omega插件进行科学上网"><a href="#方式二-通过switchy-omega插件进行科学上网" class="headerlink" title="方式二:通过switchy omega插件进行科学上网"></a>方式二:通过switchy omega插件进行科学上网</h6><ol>
+<li>通过github下载google-access 谷访访问助手破解手,启动插件,登陆同步  </li>
+<li>同步Chrome浏览器插件(包括proxy switchy omega)  </li>
+<li>SwitchyOmega设置:<pre><code class="情景模式名称:v2ray">网址协议:(默认)
+代理方式SOCKS 
+代理服务器:127.0.0.1 
+代理端口:1089
+</code></pre>
+PAC规则在Qv2ray进行设置,一开始两种方式都报错,始终不能代理访问成功.<br>最终发现是<strong>本地时间</strong>不对,调整完成后就正常了. </li>
+</ol>
 
       
     </div>
