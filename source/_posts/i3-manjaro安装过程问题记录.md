@@ -205,7 +205,21 @@ nvim ~/.bashrc
 `set -U fish_user_paths ~/hexo/node_modules/.bin $fish_user_paths`
 
 
+##### google-chrome浏览器无法在manjaro下设置代理 
+Firefox,可以设置全局代理,通过qv2ray进行代理即可正常访问google  
+Chrome、Chromium无法设置系统代理,必须通过插件或者命令行
 
-
-
-
+###### 方式一:通过命令行启动代理上网  
+`google-chrome-stable --proxy-server=socks5://127.0.0.1:1089`  
+###### 方式二:通过switchy omega插件进行科学上网
+1. 通过github下载google-access 谷访访问助手破解手,启动插件,登陆同步  
+2. 同步Chrome浏览器插件(包括proxy switchy omega)  
+3. SwitchyOmega设置:
+```情景模式名称:v2ray
+   网址协议:(默认)
+   代理方式SOCKS 
+   代理服务器:127.0.0.1 
+   代理端口:1089
+```  
+PAC规则在Qv2ray进行设置,一开始两种方式都报错,始终不能代理访问成功.  
+最终发现是**本地时间**不对,调整完成后就正常了. 
