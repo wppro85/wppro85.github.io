@@ -209,8 +209,7 @@ nvim ~/.bashrc
 Firefox,可以设置全局代理,通过qv2ray进行代理即可正常访问google  
 Chrome、Chromium无法设置系统代理,必须通过插件或者命令行
 
-###### 方式一:通过命令行启动代理上网  
-`google-chrome-stable --proxy-server=socks5://127.0.0.1:1089`  
+###### 方式一:通过命令行启动代理上网  `google-chrome-stable --proxy-server=socks5://127.0.0.1:1089`  
 ###### 方式二:通过switchy omega插件进行科学上网
 1. 通过github下载google-access 谷访访问助手破解手,启动插件,登陆同步  
 2. 同步Chrome浏览器插件(包括proxy switchy omega)  
