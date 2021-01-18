@@ -205,7 +205,7 @@ nvim ~/.bashrc
 `set -U fish_user_paths ~/hexo/node_modules/.bin $fish_user_paths`
 
 
-##### google-chrome浏览器无法在manjaro下设置代理 
+#### google-chrome浏览器无法在manjaro下设置代理 
 Firefox,可以设置全局代理,通过qv2ray进行代理即可正常访问google  
 Chrome、Chromium无法设置系统代理,必须通过插件或者命令行
 
@@ -222,3 +222,59 @@ Chrome、Chromium无法设置系统代理,必须通过插件或者命令行
 ```  
 PAC规则在Qv2ray进行设置,一开始两种方式都报错,始终不能代理访问成功.  
 最终发现是**本地时间**不对,调整完成后就正常了. 
+
+
+#### 蓝牙配对失败的问题 手动命令行配对
+Manjaro默认的蓝牙总会有点小问题！所以在安装好Manjaro后如下设置下：  
+一、安装  
+基本的包  
+```pacman -S bluez bluez-utils```  
+与音频有关的包
+```
+pacman -S pulseaudio-bluetooth pavucontrol pulseaudio-alsa pulseaudio-bluetooth-a2dp-gdm-fix
+```
+二、修改设置
+```
+sudo nano /etc/bluetooth/main.conf
+```
+修改FastConnectable=false，取消#注释，改为FastConnectable=true  
+修改AutoEnable=false，去掉前面的#注释，改为AutoEnable=true
+重启！！！
+
+三、连接蓝牙设备  
+不知道为什么Manjaro下的配对码显示不出来，所以我们的控制台下进行连接配对操作：  
+1、进入蓝牙控制台  
+`bluetoothctl`  
+2、打开相关项
+```
+power on
+agent on
+default-agent
+```  
+3、扫描蓝牙设备  
+`scan on`  
+4、根据上面来找出来的蓝牙MAC码，对设备配对pair 键盘的MAC地址（可用TAB自动出来）屏幕可能会输出类似于以下的信息：
+
+`[agent] Passkey: xxxxxx`  
+这时候在你的蓝牙键盘上输入6位配对码后再回车即可完成配对！  
+5、设备信任设备  
+`trust 键盘的MAC地址`  
+6、连接设备
+connect 键盘的MAC地址
+https://peng.likehere.me/index.php/archives/41/
+
+
+#### K380蓝牙键盘连接到manjaroF键功能设置默功能
+https://github.com/jergusg/k380-function-keys-conf
+
+
+#### 关于efi和grub启动失败修复的问题
+参考文件:
+Manjaro UEFI 启动修复  
+https://blog.mynoee.com/archives/146/  
+修复UEFI模式下Manjaro Linux启动问题  
+https://blog.csdn.net/weixin_30826761/article/details/97554989  
+UEFI - Install Guide  
+https://serverfault.com/questions/3132/how-do-i-find-the-uuid-of-a-filesystem  
+How do I find the UUID of a filesystem  
+https://serverfault.com/questions/3132/how-do-i-find-the-uuid-of-a-filesystem
