@@ -173,6 +173,77 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/11/neovim%E6%8F%92%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="证券小兵的技术与业务记录">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/11/neovim%E6%8F%92%E4%BB%B6/" class="post-title-link" itemprop="url">neovim插件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-11 22:34:18 / Modified: 23:53:11" itemprop="dateCreated datePublished" datetime="2021-01-11T22:34:18+08:00">2021-01-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h5 id="vimspector插件安装"><a href="#vimspector插件安装" class="headerlink" title="vimspector插件安装"></a>vimspector插件安装</h5><ol>
+<li>修改~/.vim/setting-vim/vim-plug.vim文件,增加以下内容:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot; VimSpector</span><br><span class="line">Plug &#39;puremourning&#x2F;vimspector&#39;, &#123;&#39;do&#39;:&#39;.&#x2F;install_gadget.py --enable-python --enable-go --enable-bash&#39;&#125;</span><br><span class="line">Plug &#39;junegunn&#x2F;fzf&#39;, &#123;&#39;dir&#39;: &#39;~&#x2F;.vim&#x2F;plugged&#x2F;fzf&#39;, &#39;do&#39;: &#39;.&#x2F;install --all&#39; &#125;</span><br></pre></td></tr></table></figure></li>
+<li>修改~/.vim/user.vim文件，增加以下内容:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot; 12.Vimspector</span><br><span class="line">&quot; let g:vimspector_enable_mappings &#x3D; &#39;HUMAN&#39;</span><br><span class="line">function! s:read_template_into_buffer(template)</span><br><span class="line">	&quot; has to be a function to avoid the extra space fzf#run insers otherwise</span><br><span class="line">	execute &#39;0r ~&#x2F;.vim&#x2F;vimspector_json&#x2F;&#39;.a:template</span><br><span class="line">endfunction</span><br><span class="line">command! -bang -nargs&#x3D;* LoadVimSpectorJsonTemplate call fzf#run(&#123;</span><br><span class="line">			\   &#39;source&#39;: &#39;ls -1 ~&#x2F;.vim&#x2F;vimspector_json&#39;,</span><br><span class="line">			\   &#39;down&#39;: 20,</span><br><span class="line">			\   &#39;sink&#39;: function(&#39;&lt;sid&gt;read_template_into_buffer&#39;)</span><br><span class="line">			\ &#125;)</span><br><span class="line">noremap &lt;leader&gt;vs :tabe .vimspector.json&lt;CR&gt;:LoadVimSpectorJsonTemplate&lt;CR&gt;</span><br><span class="line">sign define vimspectorBP text&#x3D;☛ texthl&#x3D;Normal</span><br><span class="line">sign define vimspectorBPDisabled text&#x3D;☞ texthl&#x3D;Normal</span><br><span class="line">sign define vimspectorPC text&#x3D;🔶 texthl&#x3D;SpellBad</span><br></pre></td></tr></table></figure>
+这段主要是vimspector配置设置我没使用默认快捷键映射方案’HUMAN’或者’VISUAL_STUDIO’，F5等功能键键位在lin.vim已经有定义了  </li>
+</ol>
+<p>通过使用 <strong>‘leader + vs’</strong> 选择对应的模板文件在需要调试的文件夹下生成对应的配置文件  </p>
+<ol start="3">
+<li>这里需要在~/.vim/下新建<code>vimspector_json</code>文件夹，配置bash,python,go对应的模板文件<br><strong>python.json</strong>:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;adapters&quot;: &#123;</span><br><span class="line">    &quot;debugpy&quot;: &#123;</span><br><span class="line">      &quot;command&quot;: [&quot;python&quot;, &quot;-m&quot;, &quot;debugpy.adapter&quot;],</span><br><span class="line"></span><br><span class="line">      &quot;name&quot;: &quot;debugpy&quot;,</span><br><span class="line"></span><br><span class="line">      &quot;configuration&quot;: &#123;</span><br><span class="line">        &quot;python&quot;: &quot;python&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  &quot;configurations&quot;: &#123;</span><br><span class="line">    &quot;run - debugpy&quot;: &#123;</span><br><span class="line">      &quot;adapter&quot;: &quot;debugpy&quot;,</span><br><span class="line"></span><br><span class="line">      &quot;configuration&quot;: &#123;</span><br><span class="line">        &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line"></span><br><span class="line">        &quot;type&quot;: &quot;python&quot;,</span><br><span class="line"></span><br><span class="line">        &quot;cwd&quot;: &quot;$&#123;workspaceRoot&#125;&quot;,</span><br><span class="line"></span><br><span class="line">        &quot;program&quot;: &quot;$&#123;file&#125;&quot;,</span><br><span class="line"></span><br><span class="line">        &quot;stopOnEntry&quot;: true,</span><br><span class="line"></span><br><span class="line">        &quot;console&quot;: &quot;integratedTerminal&quot;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      &quot;breakpoints&quot;: &#123;</span><br><span class="line">        &quot;exception&quot;: &#123;</span><br><span class="line">          &quot;raised&quot;: &quot;N&quot;,</span><br><span class="line"></span><br><span class="line">          &quot;uncaught&quot;: &quot;&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<strong>shell.json</strong>:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;configurations&quot;: &#123;</span><br><span class="line">    &quot;run&quot;: &#123;</span><br><span class="line">      &quot;adapter&quot;: &quot;vscode-bash&quot;,</span><br><span class="line">      &quot;configuration&quot;: &#123;</span><br><span class="line">        &quot;type&quot;: &quot;shell&quot;,</span><br><span class="line">        &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">        &quot;cwd&quot;: &quot;$&#123;workspaceRoot&#125;&quot;,</span><br><span class="line">        &quot;program&quot;: &quot;$&#123;file&#125;&quot;,</span><br><span class="line">        &quot;stopOnEntry&quot;: true,</span><br><span class="line">        &quot;console&quot;: &quot;integratedTerminal&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<strong>go.json</strong>:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;configurations&quot;: &#123;</span><br><span class="line">    &quot;run&quot;: &#123;</span><br><span class="line">        &quot;adapter&quot;: &quot;vscode-go&quot;,</span><br><span class="line">        &quot;configuration&quot;: &#123;</span><br><span class="line">        &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">        &quot;program&quot;: &quot;$&#123;fileDirname&#125;&quot;,</span><br><span class="line">        &quot;mode&quot;: &quot;debug&quot;,</span><br><span class="line">        &quot;dlvToolPath&quot;: &quot;$HOME&#x2F;go&#x2F;bin&#x2F;dlv&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>简单的使用方式:<br>生成vimspector.json配置文件后<br>通过:<code>call vimspector#xxxx</code> 调用具体的函数 包括打断点,下一步,添加监控变量等等  </li>
+</ol>
+<p><strong>参考文件</strong>:<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/AI_Fanatic/article/details/104923610">https://blog.csdn.net/AI_Fanatic/article/details/104923610</a><br><a target="_blank" rel="noopener" href="https://github.com/theniceboy/nvim/blob/master/init.vim">https://github.com/theniceboy/nvim/blob/master/init.vim</a>  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/06/Mac%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -343,7 +414,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-09 16:38:49" itemprop="dateModified" datetime="2021-01-09T16:38:49+08:00">2021-01-09</time>
+                <time title="Modified: 2021-01-18 18:23:13" itemprop="dateModified" datetime="2021-01-18T18:23:13+08:00">2021-01-18</time>
               </span>
 
           
@@ -390,17 +461,18 @@
 <p>添加以下内容:<br><code>export PATH=$PATH:~/hexo/node_modules/.bin</code></p>
 <h5 id="fish添加环境变量"><a href="#fish添加环境变量" class="headerlink" title="fish添加环境变量"></a>fish添加环境变量</h5><p>参考内容: <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell">https://stackoverflow.com/questions/26208231/modifying-path-with-fish-shell</a><br><code>set -U fish_user_paths ~/hexo/node_modules/.bin $fish_user_paths</code></p>
 <h5 id="google-chrome浏览器无法在manjaro下设置代理"><a href="#google-chrome浏览器无法在manjaro下设置代理" class="headerlink" title="google-chrome浏览器无法在manjaro下设置代理"></a>google-chrome浏览器无法在manjaro下设置代理</h5><p>Firefox,可以设置全局代理,通过qv2ray进行代理即可正常访问google<br>Chrome、Chromium无法设置系统代理,必须通过插件或者命令行</p>
-<h6 id="方式一-通过命令行启动代理上网"><a href="#方式一-通过命令行启动代理上网" class="headerlink" title="方式一:通过命令行启动代理上网"></a>方式一:通过命令行启动代理上网</h6><p><code>google-chrome-stable --proxy-server=socks5://127.0.0.1:1089</code>  </p>
-<h6 id="方式二-通过switchy-omega插件进行科学上网"><a href="#方式二-通过switchy-omega插件进行科学上网" class="headerlink" title="方式二:通过switchy omega插件进行科学上网"></a>方式二:通过switchy omega插件进行科学上网</h6><ol>
+<h6 id="方式一-通过命令行启动代理上网-google-chrome-stable-proxy-server-socks5-127-0-0-1-1089"><a href="#方式一-通过命令行启动代理上网-google-chrome-stable-proxy-server-socks5-127-0-0-1-1089" class="headerlink" title="方式一:通过命令行启动代理上网  google-chrome-stable --proxy-server=socks5://127.0.0.1:1089"></a>方式一:通过命令行启动代理上网  <code>google-chrome-stable --proxy-server=socks5://127.0.0.1:1089</code></h6><h6 id="方式二-通过switchy-omega插件进行科学上网"><a href="#方式二-通过switchy-omega插件进行科学上网" class="headerlink" title="方式二:通过switchy omega插件进行科学上网"></a>方式二:通过switchy omega插件进行科学上网</h6><ol>
 <li>通过github下载google-access 谷访访问助手破解手,启动插件,登陆同步  </li>
 <li>同步Chrome浏览器插件(包括proxy switchy omega)  </li>
-<li>SwitchyOmega设置:<pre><code class="情景模式名称:v2ray">网址协议:(默认)
-代理方式SOCKS 
-代理服务器:127.0.0.1 
-代理端口:1089
-</code></pre>
-PAC规则在Qv2ray进行设置,一开始两种方式都报错,始终不能代理访问成功.<br>最终发现是<strong>本地时间</strong>不对,调整完成后就正常了. </li>
+<li>SwitchyOmega设置:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   网址协议:(默认)</span><br><span class="line">   代理方式SOCKS </span><br><span class="line">   代理服务器:127.0.0.1 </span><br><span class="line">   代理端口:1089</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">PAC规则在Qv2ray进行设置,一开始两种方式都报错,始终不能代理访问成功.  </span><br><span class="line">最终发现是**本地时间**不对,调整完成后就正常了. </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 蓝牙配对失败的问题 手动命令行配对</span><br><span class="line">Manjaro默认的蓝牙总会有点小问题！所以在安装好Manjaro后如下设置下：  </span><br><span class="line">一、安装  </span><br><span class="line">基本的包  </span><br><span class="line"></span><br><span class="line">&#96;pacman -S bluez bluez-utils&#96;  </span><br><span class="line">与音频有关的包</span><br></pre></td></tr></table></figure>
+pacman -S pulseaudio-bluetooth pavucontrol pulseaudio-alsa pulseaudio-bluetooth-a2dp-gdm-fix<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">二、修改设置</span><br></pre></td></tr></table></figure>
+sudo nano /etc/bluetooth/main.conf<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">修改FastConnectable&#x3D;false，取消#注释，改为FastConnectable&#x3D;true  </span><br><span class="line">修改AutoEnable&#x3D;false，去掉前面的#注释，改为AutoEnable&#x3D;true</span><br><span class="line">重启！！！</span><br><span class="line"></span><br><span class="line">三、连接蓝牙设备</span><br><span class="line">不知道为什么Manjaro下的配对码显示不出来，所以我们的控制台下进行连接配对操作：  </span><br><span class="line">1、进入蓝牙控制台  </span><br><span class="line"></span><br><span class="line">&#96;bluetoothctl&#96;  </span><br><span class="line">2、打开相关项</span><br></pre></td></tr></table></figure>
+power on<br>agent on<br>default-agent<br><code>`</code><br>3、扫描蓝牙设备<br><code>scan on</code><br>4、根据上面来找出来的蓝牙MAC码，对设备配对</li>
 </ol>
+<p>pair 键盘的MAC地址（可用TAB自动出来）<br>屏幕可能会输出类似于以下的信息：</p>
+<p><code>[agent] Passkey: xxxxxx</code><br>这时候在你的蓝牙键盘上输入6位配对码后再回车即可完成配对！<br>5、设备信任设备<br><code>trust 键盘的MAC地址</code><br>6、连接设备<br>connect 键盘的MAC地址<br><a target="_blank" rel="noopener" href="https://peng.likehere.me/index.php/archives/41/">https://peng.likehere.me/index.php/archives/41/</a></p>
+<h5 id="K380蓝牙键盘连接到manjaroF键功能设置默功能"><a href="#K380蓝牙键盘连接到manjaroF键功能设置默功能" class="headerlink" title="K380蓝牙键盘连接到manjaroF键功能设置默功能"></a>K380蓝牙键盘连接到manjaroF键功能设置默功能</h5><p><a target="_blank" rel="noopener" href="https://github.com/jergusg/k380-function-keys-conf">https://github.com/jergusg/k380-function-keys-conf</a></p>
+<h5 id="关于efi和grub启动失败修复的问题"><a href="#关于efi和grub启动失败修复的问题" class="headerlink" title="关于efi和grub启动失败修复的问题"></a>关于efi和grub启动失败修复的问题</h5><p>参考文件:<br>Manjaro UEFI 启动修复<br><a target="_blank" rel="noopener" href="https://blog.mynoee.com/archives/146/">https://blog.mynoee.com/archives/146/</a><br>修复UEFI模式下Manjaro Linux启动问题<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30826761/article/details/97554989">https://blog.csdn.net/weixin_30826761/article/details/97554989</a><br>UEFI - Install Guide<br><a target="_blank" rel="noopener" href="https://serverfault.com/questions/3132/how-do-i-find-the-uuid-of-a-filesystem">https://serverfault.com/questions/3132/how-do-i-find-the-uuid-of-a-filesystem</a><br>How do I find the UUID of a filesystem<br><a target="_blank" rel="noopener" href="https://serverfault.com/questions/3132/how-do-i-find-the-uuid-of-a-filesystem">https://serverfault.com/questions/3132/how-do-i-find-the-uuid-of-a-filesystem</a></p>
 
       
     </div>
@@ -586,12 +658,12 @@ PAC规则在Qv2ray进行设置,一开始两种方式都报错,始终不能代理
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
