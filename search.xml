@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Mac系统常用软件配置记录</title>
-    <url>/2021/01/06/Mac%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h4 id="nvALT-随叫随到随处用的Mac速记工具"><a href="#nvALT-随叫随到随处用的Mac速记工具" class="headerlink" title="nvALT - 随叫随到随处用的Mac速记工具"></a>nvALT - 随叫随到随处用的Mac速记工具</h4><h4 id="unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具"><a href="#unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具" class="headerlink" title="unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具"></a>unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具</h4><h4 id="安装v2ray命令行代理工具和qv2ray图形界面工具"><a href="#安装v2ray命令行代理工具和qv2ray图形界面工具" class="headerlink" title="安装v2ray命令行代理工具和qv2ray图形界面工具"></a>安装v2ray命令行代理工具和qv2ray图形界面工具</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install v2ray  </span><br><span class="line">brew install qv2ray  </span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/images/20210106-v2U9yi.png" alt="20210106-v2U9yi"></p>
-<h4 id="几个重要的配置文件"><a href="#几个重要的配置文件" class="headerlink" title="几个重要的配置文件"></a>几个重要的配置文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.zshrc</span><br><span class="line">.tmux.conf</span><br><span class="line">.vimrc init.vim</span><br></pre></td></tr></table></figure>
-<h4 id="Mac系下解决neovim输入中文后-退出插入模式后自动切换成英文输入法"><a href="#Mac系下解决neovim输入中文后-退出插入模式后自动切换成英文输入法" class="headerlink" title="Mac系下解决neovim输入中文后 退出插入模式后自动切换成英文输入法"></a>Mac系下解决neovim输入中文后 退出插入模式后自动切换成英文输入法</h4><p>参考内容:<a href="https://github.com/hiberabyss/smartim">https://github.com/hiberabyss/smartim</a><br>但是对于我的VIM和MAC来说还有两步需要设置<br>1.把im-select拷贝到/usr/local/bin<br><code>sudo cp ~/.vim/plugged/smartim/plugin/im-select /usr/local/bin/</code><br>确保在终端下可以直接使用im-select<br>2.修改lin.vim的配置<br><code>nvim ~/.vim/user.vim</code><br>加入以下内容:<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot; 13. im-select配置</span><br><span class="line">let g:smartim_default = &#x27;com.apple.keylayout.ABC&#x27;</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <tags>
-        <tag>Mac,Soft,profile,config</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客搭建记录</title>
     <url>/2021/01/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h4 id="安装hexo完成初始化配置"><a href="#安装hexo完成初始化配置" class="headerlink" title="安装hexo完成初始化配置"></a>安装hexo完成初始化配置</h4><h5 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h5><p><code>node -v</code>    #查看node版本<br><code>npm -v</code>    #查看npm版本<br><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code>    #安装淘宝的cnpm 管理器<br><code>cnpm -v</code>    # 查看cnpm版本<br><code>cnpm install -g hexo-cli</code>    #安装hexo框架<br><code>hexo -v</code>    #查看hexo版本<br><code>mkdir blog</code>    #创建blog目录<br><code>cd blog</code>     #进入blog目录<br><code>sudo hexo init</code>     #生成博客 初始化博客<br><code>hexo s</code>    #启动本地博客服务<br><code>http://localhost:4000/</code>    #本地访问地址<br><code>hexo n &quot;我的第一篇文章&quot;</code> #创建新的文章 </p>
@@ -146,6 +134,18 @@ power on<br>agent on<br>default-agent<br><code>`</code><br>3、扫描蓝牙设�
 ]]></content>
       <tags>
         <tag>vim,neovim,markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac系统常用软件配置记录</title>
+    <url>/2021/01/06/Mac%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h4 id="nvALT-随叫随到随处用的Mac速记工具"><a href="#nvALT-随叫随到随处用的Mac速记工具" class="headerlink" title="nvALT - 随叫随到随处用的Mac速记工具"></a>nvALT - 随叫随到随处用的Mac速记工具</h4><h4 id="unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具"><a href="#unclutter-藏在顶栏的便签、临时文件、剪切板记录器三合一工具" class="headerlink" title="unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具"></a>unclutter - 藏在顶栏的便签、临时文件、剪切板记录器三合一工具</h4><h4 id="安装v2ray命令行代理工具和qv2ray图形界面工具"><a href="#安装v2ray命令行代理工具和qv2ray图形界面工具" class="headerlink" title="安装v2ray命令行代理工具和qv2ray图形界面工具"></a>安装v2ray命令行代理工具和qv2ray图形界面工具</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install v2ray  </span><br><span class="line">brew install qv2ray  </span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/wppro85/blog_img@main/images/20210106-v2U9yi.png" alt="20210106-v2U9yi"></p>
+<h4 id="几个重要的配置文件"><a href="#几个重要的配置文件" class="headerlink" title="几个重要的配置文件"></a>几个重要的配置文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.zshrc</span><br><span class="line">.tmux.conf</span><br><span class="line">.vimrc init.vim</span><br></pre></td></tr></table></figure>
+<h4 id="Mac系下解决neovim输入中文后-退出插入模式后自动切换成英文输入法"><a href="#Mac系下解决neovim输入中文后-退出插入模式后自动切换成英文输入法" class="headerlink" title="Mac系下解决neovim输入中文后 退出插入模式后自动切换成英文输入法"></a>Mac系下解决neovim输入中文后 退出插入模式后自动切换成英文输入法</h4><p>参考内容:<a href="https://github.com/hiberabyss/smartim">https://github.com/hiberabyss/smartim</a><br>但是对于我的VIM和MAC来说还有两步需要设置<br>1.把im-select拷贝到/usr/local/bin<br><code>sudo cp ~/.vim/plugged/smartim/plugin/im-select /usr/local/bin/</code><br>确保在终端下可以直接使用im-select<br>2.修改lin.vim的配置<br><code>nvim ~/.vim/user.vim</code><br>加入以下内容:<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot; 13. im-select配置</span><br><span class="line">let g:smartim_default = &#x27;com.apple.keylayout.ABC&#x27;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <tags>
+        <tag>Mac,Soft,profile,config</tag>
       </tags>
   </entry>
 </search>
