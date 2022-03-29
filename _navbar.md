@@ -5,3 +5,4 @@
 - [Linux-Server](/linuxserver.md)
 - [MacOS](/macos.md)
 - [VIM](/vim.md)
+- [Windows](/windows.md)

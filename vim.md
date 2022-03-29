@@ -130,15 +130,18 @@ sign define vimspectorPC text=🔶 texthl=SpellBad
 https://blog.csdn.net/AI_Fanatic/article/details/104923610  
 https://github.com/theniceboy/nvim/blob/master/init.vim
 
+## 服务器上的 vim 配色显示不对
 
-## 服务器上的vim配色显示不对
-1.在vimrc文件加入下面的内容
+1.在 vimrc 文件加入下面的内容
+
 ```shell
 Syntax enable
 set background=light
 colorscheme gruvbox
 ```
-2.修改.bashrc文件
+
+2.修改.bashrc 文件
+
 ```shell
 TERM=xterm-256color
 export TERM
