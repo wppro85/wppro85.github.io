@@ -4,7 +4,7 @@
 
 1. 修改~/.vim/setting-vim/vim-plug.vim 文件,增加以下内容:
 
-```
+```shell
 " VimSpector
 Plug 'puremourning/vimspector', {'do':'./install_gadget.py --enable-python --enable-go --enable-bash'}
 Plug 'junegunn/fzf', {'dir': '~/.vim/plugged/fzf', 'do': './install --all' }
@@ -12,7 +12,7 @@ Plug 'junegunn/fzf', {'dir': '~/.vim/plugged/fzf', 'do': './install --all' }
 
 2. 修改~/.vim/user.vim 文件，增加以下内容:
 
-```
+```shell
 " 12.Vimspector
 " let g:vimspector_enable_mappings = 'HUMAN'
 function! s:read_template_into_buffer(template)
@@ -37,7 +37,7 @@ sign define vimspectorPC text=🔶 texthl=SpellBad
 3. 这里需要在~/.vim/下新建`vimspector_json`文件夹，配置 bash,python,go 对应的模板文件  
    **python.json**:
 
-```
+```json
 {
   "adapters": {
     "debugpy": {
@@ -84,7 +84,7 @@ sign define vimspectorPC text=🔶 texthl=SpellBad
 
 **shell.json**:
 
-```
+```json
 {
   "configurations": {
     "run": {
@@ -105,7 +105,7 @@ sign define vimspectorPC text=🔶 texthl=SpellBad
 
 **go.json**:
 
-```
+```json
 {
   "configurations": {
     "run": {
@@ -139,6 +139,7 @@ set background=light
 colorscheme gruvbox
 ```
 2.修改.bashrc文件
+
 ```shell
 TERM=xterm-256color
 export TERM
