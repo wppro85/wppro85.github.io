@@ -22,7 +22,11 @@
 | su - root                                                    | 切换到root用户                                            | ubuntu: sudo -i或sudo su - 输入普通密码就可以切换到root了 这些用户需要在wheel组中 |
 | cp -a                                                        | 保留源文件的属性包括修改时间                              |                                                              |
 | cp -a /root/soft {,bak}                                      | 复制并备份文件                                            | {}前的字符穿与{}中逗号后的字符串相连，形成新的字符串         |
-|                                                              |                                                           |                                                              |
+| timedatectl status                                           | 查看服务器时区                                            |                                                              |
+| set-timezone Asia/Shanghai                                   | 设置时区                                                  |                                                              |
+| date '+%F %T'                                                | 格式输出                                                  | 2022-04-14 15:43:41                                          |
+| date '+%Y-%m-%d %H-%M-%S %A'                                 | 格式输出                                                  | 2022-04-14 15-43-41 Thursday                                 |
+| touch `date +%F`                                             | 等价于$()                                                 | =touch $(date +%F)                                           |
 | ncdu                                                         | 查看磁盘文件占用空间 非常清楚                             |                                                              |
 | lsblk -n -e7                                                 | 查看硬盘情况                                              |                                                              |
 | uname -a                                                     | 查看系统版本                                              |                                                              |
