@@ -150,3 +150,9 @@ colorscheme gruvbox
 TERM=xterm-256color
 export TERM
 ```
+
+
+## lazyvim 2024配置
+**参考视频**:  
+https://space.bilibili.com/1334071567/channel/collectiondetail?sid=1938094  
+https://space.bilibili.com/35298669/channel/collectiondetail?sid=1572668  
