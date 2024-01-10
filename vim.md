@@ -79,7 +79,6 @@ sign define vimspectorPC text=🔶 texthl=SpellBad
     }
   }
 }
-
 ```
 
 **shell.json**:
@@ -100,7 +99,6 @@ sign define vimspectorPC text=🔶 texthl=SpellBad
     }
   }
 }
-
 ```
 
 **go.json**:
@@ -109,8 +107,8 @@ sign define vimspectorPC text=🔶 texthl=SpellBad
 {
   "configurations": {
     "run": {
-        "adapter": "vscode-go",
-        "configuration": {
+      "adapter": "vscode-go",
+      "configuration": {
         "request": "launch",
         "program": "${fileDirname}",
         "mode": "debug",
@@ -119,7 +117,6 @@ sign define vimspectorPC text=🔶 texthl=SpellBad
     }
   }
 }
-
 ```
 
 4. 简单的使用方式:  
@@ -139,27 +136,51 @@ Syntax enable
 set background=light
 colorscheme gruvbox
 ```
-<<<<<<< HEAD
-2.修改.bashrc文件
+
+<<<<<<< HEAD 2.修改.bashrc文件
 =======
 
 2.修改.bashrc 文件
->>>>>>> 712c3af5f29f3a01a92a18d2099c864612c708a7
+
+> > > > > > > 712c3af5f29f3a01a92a18d2099c864612c708a7
 
 ```shell
 TERM=xterm-256color
 export TERM
 ```
 
-
 ## lazyvim 2024配置
+
 **参考视频**:  
 https://space.bilibili.com/1334071567/channel/collectiondetail?sid=1938094  
-https://space.bilibili.com/35298669/channel/collectiondetail?sid=1572668  
+https://space.bilibili.com/35298669/channel/collectiondetail?sid=1572668
 
 ## rust运行报错问题
+
 windows下运行rust报错error: linker `link.exe` not found
+
 ```
 rustup toolchain install stable-x86_64-pc-windows-gnu
 ustup default stable-x86_64-pc-windows-gnu
+```
+
+neovim 编辑rust文件提示: "client rust_analyzer-standalone quit with code 1 and signal 0"  
+删除不能自动启动的rusnt-analyzer  
+`scoop unsintall rust-analyzer`  
+安装 rust-analyzer 工具并将其添加到您的环境路径中  
+`rustup component add rust-analyzer`
+
+## astronvim配置问题记录
+
+1.luarocks安装
+
+```
+scoop install luarocks
+```
+
+2.nvim-dap报错问题
+注释文件中的相关内容
+
+```
+  enabled = vim.fn.has "win32" == 0,
 ```
