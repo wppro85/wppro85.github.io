@@ -156,3 +156,10 @@ export TERM
 **参考视频**:  
 https://space.bilibili.com/1334071567/channel/collectiondetail?sid=1938094  
 https://space.bilibili.com/35298669/channel/collectiondetail?sid=1572668  
+
+## rust运行报错问题
+windows下运行rust报错error: linker `link.exe` not found
+```
+rustup toolchain install stable-x86_64-pc-windows-gnu
+ustup default stable-x86_64-pc-windows-gnu
+```
