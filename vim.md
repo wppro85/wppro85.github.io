@@ -137,8 +137,7 @@ set background=light
 colorscheme gruvbox
 ```
 
-<<<<<<< HEAD 2.修改.bashrc文件
-=======
+# <<<<<<< HEAD 2.修改.bashrc文件
 
 2.修改.bashrc 文件
 
@@ -173,14 +172,8 @@ neovim 编辑rust文件提示: "client rust_analyzer-standalone quit with code 1
 ## astronvim配置问题记录
 
 1.luarocks安装
-
-```
-scoop install luarocks
-```
+`scoop install luarocks`
 
 2.nvim-dap报错问题
 注释文件中的相关内容
-
-```
-  enabled = vim.fn.has "win32" == 0,
-```
+`enabled = vim.fn.has "win32" == 0,`
